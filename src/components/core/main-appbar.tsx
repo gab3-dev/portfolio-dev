@@ -9,14 +9,11 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { createTheme, alpha, getContrastRatio, ThemeProvider } from '@mui/material/styles';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Projetos', 'Serviços', 'Blog'];
 
 const violetBase = '#7F00FF';
 const violetMain = alpha(violetBase, 0.7);
@@ -156,54 +153,10 @@ function ResponsiveAppBar() {
                                 </Button>
                             ))}
                         </Box>
-                        <Box sx={{ flexGrow: 0 }}>
-                            <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                                </IconButton>
-                            </Tooltip>
-                            <Menu
-                                sx={{
-                                    mt: '45px',
-                                    display: { xs: 'block', md: 'none' },
-                                    '& .MuiMenuItem-root': {
-                                        backgroundColor: 'rgb(42, 42, 42)',
-                                        color: 'white',
-                                    },
-                                    '& .MuiMenu-paper': {
-                                        backgroundColor: 'rgb(42, 42, 42)',
-                                        color: 'white',
-                                    },
-                                    '& .MuiMenuItem-root:hover': {
-                                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                        color: 'white',
-                                    },
-                                }}
-                                id="menu-appbar"
-                                anchorEl={anchorElUser}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElUser)}
-                                onClose={handleCloseUserMenu}
-                            >
-                                {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                        <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
-                        </Box>
                     </Toolbar>
                 </Container>
             </AppBar>
-        </ThemeProvider>
+        </ThemeProvider >
     );
 }
 export default ResponsiveAppBar;

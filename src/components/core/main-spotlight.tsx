@@ -73,12 +73,14 @@ export function SpotLightItem({ children }: SpotlightItemProps) {
             <div
                 onMouseMove={handleMouemove}
                 onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+                onMouseLeave={() => setIsHovered(true)}
                 ref={boxWrapper}
                 className={cn(
                     'group relative rounded-[20px] p-[2px] bg-[#eeeeee15] overflow-hidden w-full mx-auto'
                 )}
             >
+
+                {/* Effect only on Hover */}
                 {isHovered && (
                     <div
                         className='pointer-events-none absolute opacity-0 z-50 rounded-xl w-full h-full group-hover:opacity-100  transition duration-300 '

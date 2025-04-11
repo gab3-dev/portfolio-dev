@@ -11,9 +11,11 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@img-comparison-slider/react": "^8.0.2",
     "@mui/icons-material": "^6.4.8",
     "@mui/material": "^6.4.8",
     "@types/react-router-dom": "^5.3.3",
+    "animejs": "^4.0.0",
     "clsx": "^2.1.1",
     "motion": "^12.5.0",
     "next": "15.2.3",
