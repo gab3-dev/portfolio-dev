@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { berkleyFont } from '@/fonts';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -35,43 +36,48 @@ const theme = createTheme({
     },
 });
 
-function ResponsiveAppBar() {
+interface ResponsiveAppBarProps {
+    className?: string;
+}
+
+function ResponsiveAppBar({ className }: ResponsiveAppBarProps) {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+    // const [_, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
+    // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    //     setAnchorElUser(event.currentTarget);
+    // };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+    // const handleCloseUserMenu = () => {
+    //     setAnchorElUser(null);
+    // };
 
     return (
         <ThemeProvider theme={theme}>
-            <AppBar className='rounded-[20px] bg-black' position="relative" color='primary' enableColorOnDark={true}>
+            <AppBar className={`bg-black rounded-[20px] ${className || ''}`} position="relative" color='primary' enableColorOnDark={true}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <Typography
+                            className="underline-effect"
                             variant="h6"
                             noWrap
                             component="a"
                             href="#app-bar-with-responsive-menu"
+                            style={berkleyFont.style}
                             sx={{
                                 mr: 2,
-                                display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'monospace',
+                                display: { xs: 'none', md: 'inline-block' },
+                                overflow: 'visible',
                                 fontWeight: 700,
                                 letterSpacing: '.1rem',
                                 color: 'inherit',
-                                textDecoration: 'none',
                             }}
                         >
                             GabeDev
@@ -119,7 +125,7 @@ function ResponsiveAppBar() {
                             >
                                 {pages.map((page) => (
                                     <MenuItem className='bg-black' key={page} onClick={handleCloseNavMenu}>
-                                        <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                        <Typography style={berkleyFont.style} sx={{ textAlign: 'center' }}>{page}</Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -127,13 +133,14 @@ function ResponsiveAppBar() {
                         <Typography
                             variant="h5"
                             noWrap
+                            style={berkleyFont.style}
                             component="a"
                             href="#app-bar-with-responsive-menu"
                             sx={{
                                 mr: 2,
                                 display: { xs: 'flex', md: 'none' },
+                                overflow: 'visible',
                                 flexGrow: 1,
-                                fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
                                 color: 'inherit',
@@ -145,18 +152,29 @@ function ResponsiveAppBar() {
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
                                 <Button
+                                    style={berkleyFont.style}
                                     key={page}
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'white', display: 'block' }}
                                 >
-                                    {page}
+                                    <Typography
+                                        style={berkleyFont.style}
+                                        component="a"
+                                        className="underline-effect"
+                                        sx={{
+                                            fontWeight: 400,
+                                            color: 'inherit',
+                                            textDecoration: 'none',
+                                        }}>
+                                        {page}
+                                    </Typography>
                                 </Button>
                             ))}
                         </Box>
                     </Toolbar>
                 </Container>
             </AppBar>
-        </ThemeProvider >
+        </ThemeProvider>
     );
 }
 export default ResponsiveAppBar;

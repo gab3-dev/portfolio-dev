@@ -1,0 +1,54 @@
+$rgb-current-1: rgb(113, 122, 255);
+
+:root {
+  --rgb-current-1: $rgb-current-1;
+  --font-body: "DIN", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.underline-effect {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-effect::after {
+  content: '';
+  display: block;
+  position: absolute;
+  margin: 0 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.underline-effect:hover::after {
+  width: 100%;
+}
+
+.dotted-grid:after,
+.square-grid:after {
+  opacity: 0.5;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+}
+
+.dotted-grid:after {
+  opacity: 0.5;
+  background-image: radial-gradient(currentColor 0.5px, transparent 0.5px);
+  background-size: calc(0.5rem - 1px) calc(0.5rem - 1px);
+  background-position: -3px -3px;
+}
+
+.square-grid:after {
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  background-image:
+    linear-gradient(rgba(var(--rgb-current-1), 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--rgb-current-1), 0.5) 1px, transparent 1px);
+  background-size:
+    1rem 1rem,
+    1rem 1rem;
+  box-shadow: inset 0 0 0 1px rgba(var(--rgb-current-1), 1);
+}
