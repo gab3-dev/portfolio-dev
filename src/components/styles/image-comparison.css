@@ -12,6 +12,14 @@
         height: 100% !important;
     }
 
+    .handle-container {
+        border: black 10px solid;
+    }
+
+    .divider {
+        border: black 10px solid;
+    }
+
     img-comparison-slider>div {
         height: 100%;
     }

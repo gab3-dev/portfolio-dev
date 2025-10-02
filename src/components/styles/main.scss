@@ -52,3 +52,24 @@ $rgb-current-1: rgb(113, 122, 255);
     1rem 1rem;
   box-shadow: inset 0 0 0 1px rgba(var(--rgb-current-1), 1);
 }
+
+.MuiToolbar-root {
+  justify-content: space-between;
+}
+
+/* Sobrescrevendo estilos de alguns componentes */
+@media (min-width: 1536px) {
+  .css-hhdjsd-MuiContainer-root {
+    max-width: unset !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .css-bnhok0-MuiTypography-root {
+    width: 50vw;
+  }
+}
+
+.css-1t6c9ts {
+  flex-grow: 0 !important;
+}
