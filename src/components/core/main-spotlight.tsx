@@ -5,8 +5,6 @@ import React, {
     useRef,
     useState,
     MouseEvent,
-    useContext,
-    createContext,
 } from 'react';
 
 interface SpotlightProps {
@@ -16,15 +14,10 @@ interface SpotlightProps {
     HoverFocusSpotlight?: boolean;
     CursorFlowGradient?: boolean;
 }
+
 interface SpotlightItemProps {
     children: React.ReactNode;
     className?: string;
-}
-
-interface SpotLightContextType {
-    ProximitySpotlight: boolean;
-    HoverFocusSpotlight: boolean;
-    CursorFlowGradient: boolean;
 }
 
 export const Spotlight = ({
@@ -45,11 +38,11 @@ export function SpotLightItem({ children }: SpotlightItemProps) {
     const boxWrapper = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
     const [mousePosition, setMousePosition] = React.useState({
-        x: null,
-        y: null,
+        x: 0,
+        y: 0,
     });
     React.useEffect(() => {
-        const updateMousePosition = (ev: { clientX: any; clientY: any }) => {
+        const updateMousePosition = (ev: { clientX: number; clientY: number }) => {
             setMousePosition({ x: ev.clientX, y: ev.clientY });
         };
         window.addEventListener('mousemove', updateMousePosition);
@@ -60,7 +53,7 @@ export function SpotLightItem({ children }: SpotlightItemProps) {
 
     const [overlayColor, setOverlayColor] = useState({ x: 0, y: 0 });
     const handleMouemove = ({ currentTarget, clientX, clientY }: MouseEvent<HTMLDivElement>) => {
-        let { left, top } = currentTarget.getBoundingClientRect();
+        const { left, top } = currentTarget.getBoundingClientRect();
 
         const x = clientX - left;
         const y = clientY - top;
@@ -79,7 +72,6 @@ export function SpotLightItem({ children }: SpotlightItemProps) {
                     'group relative rounded-[20px] p-[2px] bg-[#eeeeee15] overflow-hidden w-full mx-auto'
                 )}
             >
-
                 {/* Effect only on Hover */}
                 {isHovered && (
                     <div

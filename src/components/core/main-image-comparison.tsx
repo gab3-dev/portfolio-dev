@@ -1,83 +1,84 @@
 "use client";
 
 import {
-  HTMLImgComparisonSliderElement,
-  ImgComparisonSlider,
+    HTMLImgComparisonSliderElement,
+    ImgComparisonSlider,
 } from "@img-comparison-slider/react";
+import Image from "next/image";
 import "../styles/image-comparison.css";
 import { RefObject, useEffect, useRef } from "react";
 
 type imgProps = {
-  urlBefore: string;
-  urlAfter: string;
+    urlBefore: string;
+    urlAfter: string;
 };
 
 export default function MainImageComparison({ urlBefore, urlAfter }: imgProps) {
-  const sliderRef = useRef<HTMLElement | null>(null);
+    const sliderRef = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    const el = sliderRef.current;
-    if (!el) return;
+    useEffect(() => {
+        const el = sliderRef.current;
+        if (!el) return;
 
-    const waitForSecondSlot = () => {
-      const shadow = el.shadowRoot;
-      if (!shadow) {
-        requestAnimationFrame(waitForSecondSlot);
-        return;
-      }
+        const waitForSecondSlot = () => {
+            const shadow = el.shadowRoot;
+            if (!shadow) {
+                requestAnimationFrame(waitForSecondSlot);
+                return;
+            }
 
-      const secondSlot = shadow.querySelector(
-        "#second",
-      ) as HTMLSlotElement | null;
+            const secondSlot = shadow.querySelector(
+                "#second",
+            ) as HTMLSlotElement | null;
 
-      if (secondSlot) {
-        console.log("Second slot found:", secondSlot);
-        const img = secondSlot as HTMLElement | undefined;
-        if (img) {
-          img.style.height = "100%";
-          img.style.objectFit = "cover"; // optional: fill the area without distorting the image.
-        }
-      } else {
-        requestAnimationFrame(waitForSecondSlot);
-      }
-    };
+            if (secondSlot) {
+                console.log("Second slot found:", secondSlot);
+                const img = secondSlot as HTMLElement | undefined;
+                if (img) {
+                    img.style.height = "100%";
+                    img.style.objectFit = "cover"; // optional: fill the area without distorting the image.
+                }
+            } else {
+                requestAnimationFrame(waitForSecondSlot);
+            }
+        };
 
-    const waitForDivider = () => {
-      const shadow = el.shadowRoot;
-      if (!shadow) {
-        requestAnimationFrame(waitForDivider);
-        return;
-      }
+        const waitForDivider = () => {
+            const shadow = el.shadowRoot;
+            if (!shadow) {
+                requestAnimationFrame(waitForDivider);
+                return;
+            }
 
-      const _style = shadow.querySelector("style");
+            const _style = shadow.querySelector("style");
 
-      if (_style) {
-        // Shadow element's style tag.
-        const STYLE_TAG = _style as HTMLElement | undefined;
-        if (STYLE_TAG) {
-          // Style for the img-comparison-slider's line handler.
-          STYLE_TAG.innerHTML +=
-            ".divider::after { width: 3px; background: black; border: 1px white solid; }";
-        }
-      } else {
-        requestAnimationFrame(waitForDivider);
-      }
-    };
+            if (_style) {
+                // Shadow element's style tag.
+                const STYLE_TAG = _style as HTMLElement | undefined;
+                if (STYLE_TAG) {
+                    // Style for the img-comparison-slider's line handler.
+                    STYLE_TAG.innerHTML +=
+                        ".divider::after { width: 3px; background: black; border: 1px white solid; }";
+                }
+            } else {
+                requestAnimationFrame(waitForDivider);
+            }
+        };
 
-    waitForSecondSlot();
-    waitForDivider();
-  }, []);
+        waitForSecondSlot();
+        waitForDivider();
+    }, []);
 
-  return (
-    <div className="w-full h-full">
-      <ImgComparisonSlider
-        ref={sliderRef as RefObject<HTMLImgComparisonSliderElement | null>}
-        className="w-full h-full"
-        style={{ height: "100%" }}
-      >
-        <img slot="first" src={urlBefore} />
-        <img slot="second" src={urlAfter} />
-      </ImgComparisonSlider>
-    </div>
-  );
+    return (
+        <div className="w-full h-full">
+            <ImgComparisonSlider
+                ref={sliderRef as RefObject<HTMLImgComparisonSliderElement | null>}
+                className="w-full h-full"
+                style={{ height: "100%" }}
+            >
+                <Image fill={true} slot="first" src={urlBefore} alt="Project before" />
+                <Image fill={true} slot="second" src={urlAfter} alt="Project after" />
+            </ImgComparisonSlider>
+        </div>
+    );
 }
