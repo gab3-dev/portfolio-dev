@@ -139,6 +139,7 @@
   width: 200%;
   height: 200%;
   border: 0;
+  zoom: 0.5;
   -ms-zoom: 0.5;
   -moz-transform: scale(0.5);
   -moz-transform-origin: 0 0;
