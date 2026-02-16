@@ -1,8 +1,8 @@
 import '../styles/main-macbook-mockup.css';
 
-export default function MainMacbookMockup({ children }: { children: React.ReactNode }) {
+export default function MainMacbookMockup({ children, style }: { children: React.ReactNode, style?: React.CSSProperties }) {
     return (
-        <div className="mbp-mockup-wrapper">
+        <div className="mbp-mockup-wrapper" style={style}>
             <div className="mbp-container">
                 <div className="mbp-display with-glare">
                     <div className="display-edge">

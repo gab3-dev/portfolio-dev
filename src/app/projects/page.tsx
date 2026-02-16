@@ -25,13 +25,13 @@ export default function Projects() {
         entre cores e melhor responsividade.
       </Typography>
       <Carousel>
-        <MainMacbookMockup>
+        <MainMacbookMockup style={{ backgroundColor: '#0597D3' }}>
           <MainImageComparison
             urlBefore="/comparison/project_T_old.png"
             urlAfter="/comparison/project_T_new.png"
           />
         </MainMacbookMockup>
-        <MainMacbookMockup>
+        <MainMacbookMockup style={{ backgroundColor: '#004EA5' }}>
           <MainImageComparison
             urlBefore="/comparison/project_G_old.png"
             urlAfter="/comparison/project_G_new.png"
