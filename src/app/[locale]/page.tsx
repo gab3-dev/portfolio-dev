@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { berkleyFont } from '@/fonts';
 import HoverImage from '@/components/core/hover-image';
 import { useTranslations } from 'next-intl';
@@ -12,28 +12,30 @@ export default function Home() {
     style: berkleyFont.style,
     sx: {
       display: 'flex',
-      padding: '20px',
+      padding: { xs: '10px 16px', sm: '20px' },
       margin: '0 auto',
       textAlign: 'center',
       fontWeight: 'bold',
+      fontSize: 'clamp(1.2rem, 1rem + 1.6vw, 2.125rem)',
+      lineHeight: 1.3,
     },
   };
 
   return (
     <>
-      <div
-        style={{
+      <Box
+        sx={{
           display: 'grid',
-          gridTemplateColumns: '1fr 3fr 1fr',
+          gridTemplateColumns: { xs: '1fr', sm: '1fr 3fr 1fr' },
           alignItems: 'center',
-          width: '90vw',
+          width: { xs: '100vw', sm: '90vw' },
           height: '80vh',
           margin: '0 auto',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
+        <Box
+          sx={{
+            display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
             justifyContent: 'space-between',
             height: '100%',
@@ -42,7 +44,7 @@ export default function Home() {
           <HoverImage name="linux" height={150} width={150} alt="Linux" style={{ alignSelf: 'end' }} />
           <HoverImage name="dotnet" height={150} width={150} alt="DotNet" />
           <HoverImage name="flutter" height={150} width={150} alt="Flutter" style={{ alignSelf: 'end' }} />
-        </div>
+        </Box>
         <div>
           <Typography
             style={defaultTypographyStyle.style}
@@ -66,9 +68,9 @@ export default function Home() {
             {t('pitch')}
           </Typography>
         </div>
-        <div
-          style={{
-            display: 'flex',
+        <Box
+          sx={{
+            display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
             justifyContent: 'space-between',
             height: '100%',
@@ -77,8 +79,8 @@ export default function Home() {
           <HoverImage name="postgresql" height={150} width={150} alt="PostgreSQL" />
           <HoverImage name="rust" height={150} width={150} alt="Rust" style={{ alignSelf: 'end' }} />
           <HoverImage name="angular" height={150} width={150} alt="Angular" />
-        </div>
-      </div>
+        </Box>
+      </Box>
     </>
   );
 }
