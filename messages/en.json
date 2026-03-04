@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "title": "GabeDev",
+    "description": "Let's code it"
+  },
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "blog": "Blog"
+  },
+  "home": {
+    "greeting": "Hello, nice to see you here! My name is Gabriel Henrique.",
+    "stack": "I'm a FullStack developer working with Angular, React, Rust, Flutter, PostgreSQL and ASP.NET.",
+    "pitch": "I build fast, responsive, modern and flexible applications, always focusing on performance, quality and great user experience."
+  },
+  "projects": {
+    "pageTitle": "Projects",
+    "webTitle": "Web Development",
+    "webDescription": "Focused on improving website quality, these were redesigned with a more modern look, rounded corners, new font styles, better color contrast and improved responsiveness.",
+    "mobileTitle": "Mobile Development",
+    "mobileDescription": "MangaKo is a native Android application built with Kotlin and Jetpack Compose, following Material Design 3 principles. The project uses MVVM architecture with Room for local persistence, Retrofit for API consumption and Coil for image loading. It showcases my ability to create modern, reactive UIs applying mobile best practices (clean architecture, dependency injection and state management)."
+  },
+  "services": {
+    "pageTitle": "Services",
+    "intro": "I offer a comprehensive range of development services to help bring your ideas to life. From code improvements to full application development, I'm here to help.",
+    "refactoringTitle": "Code Refactoring",
+    "refactoringDescription": "Transform legacy code into clean, maintainable, and efficient solutions. I improve code structure, remove technical debt, and enhance performance while preserving existing functionality.",
+    "websiteTitle": "Website Creation",
+    "websiteDescription": "Build modern, responsive, and high-performance websites tailored to your needs. From landing pages to complex web applications using the latest technologies.",
+    "mobileTitle": "Mobile App Creation",
+    "mobileDescription": "Develop native and cross-platform mobile applications for iOS and Android. Create intuitive, fast, and engaging mobile experiences that your users will love.",
+    "bugfixTitle": "Bug Corrections",
+    "bugfixDescription": "Identify and resolve software bugs efficiently. I debug applications, fix issues, and implement preventive measures to ensure stable and reliable software.",
+    "apiTitle": "API Creation & Implementation",
+    "apiDescription": "Design and build robust RESTful and GraphQL APIs. From backend architecture to frontend integration, I create scalable APIs that power your applications.",
+    "consultancyTitle": "Consultancy",
+    "consultancyDescription": "Get expert advice on technology choices, architecture decisions, code reviews, and development best practices. I help you make informed decisions for your projects."
+  }
+}

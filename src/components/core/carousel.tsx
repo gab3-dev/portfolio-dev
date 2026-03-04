@@ -20,7 +20,7 @@ const CarouselContainer = styled(Box)(() => ({
 const CarouselItem = styled(Box)(() => ({
     scrollSnapAlign: 'center',
     flexShrink: 0,
-    width: '99vw',
+    width: '90vw',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

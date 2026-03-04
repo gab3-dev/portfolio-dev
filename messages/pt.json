@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "title": "GabeDev",
+    "description": "Vamos codar isso"
+  },
+  "nav": {
+    "projects": "Projetos",
+    "services": "Serviços",
+    "blog": "Blog"
+  },
+  "home": {
+    "greeting": "Olá, é bom ter você por aqui! Eu me chamo Gabriel Henrique.",
+    "stack": "Sou desenvolvedor Full Stack e trabalho com Angular, React, Rust, Flutter, PostgreSQL e ASP.NET.",
+    "pitch": "Crio aplicações rápidas, responsivas, modernas e flexíveis, sempre focando em desempenho, qualidade e boa experiência do usuário."
+  },
+  "projects": {
+    "pageTitle": "Projetos",
+    "webTitle": "Desenvolvimento Web",
+    "webDescription": "Com foco em dar mais qualidade aos sites, estes foram redesenhados buscando um design mais moderno, com cantos arredondados, novos estilos de fonte, maior contraste entre cores e melhor responsividade.",
+    "mobileTitle": "Desenvolvimento Mobile",
+    "mobileDescription": "O MangaKo é uma aplicação Android nativa desenvolvida com Kotlin e Jetpack Compose, seguindo os princípios do Material Design 3. O projeto adota a arquitetura MVVM e utiliza Room para persistência local, Retrofit para consumo de APIs e Coil para carregamento de imagens. Ele demonstra minha capacidade de criar interfaces modernas e reativas, aplicando as melhores práticas do desenvolvimento mobile (clean architecture, injeção de dependência e state management)."
+  },
+  "services": {
+    "pageTitle": "Serviços",
+    "intro": "Ofereço uma gama completa de serviços de desenvolvimento para ajudar a transformar suas ideias em realidade. De melhorias de código ao desenvolvimento completo de aplicações, estou aqui para ajudar.",
+    "refactoringTitle": "Refatoração de Código",
+    "refactoringDescription": "Transforme código legado em soluções limpas, sustentáveis e eficientes. Eu melhoro a estrutura do código, removo dívidas técnicas e aprimoro o desempenho preservando a funcionalidade existente.",
+    "websiteTitle": "Criação de Sites",
+    "websiteDescription": "Construa sites modernos, responsivos e de alta performance sob medida para suas necessidades. Desde landing pages até aplicações web complexas usando as tecnologias mais recentes.",
+    "mobileTitle": "Criação de Aplicativos Mobile",
+    "mobileDescription": "Desenvolva aplicativos móveis nativos e multiplataforma para iOS e Android. Crie experiências móveis intuitivas, rápidas e envolventes que seus usuários vão adorar.",
+    "bugfixTitle": "Correção de Bugs",
+    "bugfixDescription": "Identifique e resolva bugs de software de forma eficiente. Eu depuro aplicações, corrijo problemas e implemento medidas preventivas para garantir software estável e confiável.",
+    "apiTitle": "Criação e Implementação de APIs",
+    "apiDescription": "Projete e construa APIs RESTful e GraphQL robustas. Da arquitetura backend à integração frontend, eu crio APIs escaláveis que impulsionam suas aplicações.",
+    "consultancyTitle": "Consultoria",
+    "consultancyDescription": "Obtenha conselhos especializados sobre escolhas tecnológicas, decisões de arquitetura, revisões de código e melhores práticas de desenvolvimento. Eu ajudo você a tomar decisões informadas para seus projetos."
+  }
+}
