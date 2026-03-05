@@ -1,5 +1,4 @@
 import { berkleyFont } from '@/fonts';
-import Section from '@/components/core/section';
 import { Box, Card, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 
