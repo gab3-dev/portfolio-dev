@@ -35,5 +35,11 @@
     "apiDescription": "Projete e construa APIs RESTful e GraphQL robustas. Da arquitetura backend à integração frontend, eu crio APIs escaláveis que impulsionam suas aplicações.",
     "consultancyTitle": "Consultoria",
     "consultancyDescription": "Obtenha conselhos especializados sobre escolhas tecnológicas, decisões de arquitetura, revisões de código e melhores práticas de desenvolvimento. Eu ajudo você a tomar decisões informadas para seus projetos."
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "soonHeading": "Em breve...",
+    "soonLine1": "Estou escrevendo algo especial.",
+    "soonLine2": "Volte em breve para conferir."
   }
 }
