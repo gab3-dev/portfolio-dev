@@ -4,6 +4,7 @@ import MainMacbookMockup from '@/components/core/main-macbook-mockup';
 import Carousel from '@/components/core/carousel';
 import Section from '@/components/core/section';
 import { Box, Card, Typography } from '@mui/material';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 export default function Projects() {
@@ -52,9 +53,9 @@ export default function Projects() {
         {/* Carousel for small screens */}
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           <Carousel>
-            <img src="/projects/mangako/mangako_collection.png" style={{ height: '70vh', width: 'auto' }} alt="MangaKo Collection" />
-            <img src="/projects/mangako/mangako_manga.png" style={{ height: '70vh', width: 'auto' }} alt="MangaKo Manga" />
-            <img src="/projects/mangako/mangako_search.png" style={{ height: '70vh', width: 'auto' }} alt="MangaKo Search" />
+            <Image src="/projects/mangako/mangako_collection.png" width={1080} height={2400} style={{ height: '70vh', width: 'auto' }} alt="MangaKo Collection" />
+            <Image src="/projects/mangako/mangako_manga.png" width={1080} height={2400} style={{ height: '70vh', width: 'auto' }} alt="MangaKo Manga" />
+            <Image src="/projects/mangako/mangako_search.png" width={1080} height={2400} style={{ height: '70vh', width: 'auto' }} alt="MangaKo Search" />
           </Carousel>
         </Box>
         {/* Flex layout for larger screens */}
@@ -69,9 +70,9 @@ export default function Projects() {
             boxShadow: 'none',
           }}
         >
-          <img src="/projects/mangako/mangako_collection.png" style={{ height: '85vh', width: 'auto' }} alt="MangaKo Collection" />
-          <img src="/projects/mangako/mangako_manga.png" style={{ height: '85vh', width: 'auto' }} alt="MangaKo Manga" />
-          <img src="/projects/mangako/mangako_search.png" style={{ height: '85vh', width: 'auto' }} alt="MangaKo Search" />
+          <Image src="/projects/mangako/mangako_collection.png" width={1080} height={2400} style={{ height: '85vh', width: 'auto' }} alt="MangaKo Collection" />
+          <Image src="/projects/mangako/mangako_manga.png" width={1080} height={2400} style={{ height: '85vh', width: 'auto' }} alt="MangaKo Manga" />
+          <Image src="/projects/mangako/mangako_search.png" width={1080} height={2400} style={{ height: '85vh', width: 'auto' }} alt="MangaKo Search" />
         </Card>
       </Section>
     </>
