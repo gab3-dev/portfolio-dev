@@ -6,7 +6,8 @@
   "nav": {
     "projects": "Projetos",
     "services": "Serviços",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contacts": "Contato"
   },
   "home": {
     "greeting": "Olá, é bom ter você por aqui! Eu me chamo Gabriel Henrique.",
@@ -41,5 +42,15 @@
     "soonHeading": "Em breve...",
     "soonLine1": "Estou escrevendo algo especial.",
     "soonLine2": "Volte em breve para conferir."
+  },
+  "contacts": {
+    "pageTitle": "Vamos Conversar",
+    "intro": "Seja para um projeto, uma dúvida ou só um oi — minha caixa de entrada está sempre aberta.",
+    "emailTitle": "E-mail",
+    "githubTitle": "GitHub",
+    "linkedinTitle": "LinkedIn",
+    "emailLabel": "gabe.dev@icloud.com",
+    "githubLabel": "@gab3-dev",
+    "linkedinLabel": "Conecte-se comigo"
   }
 }

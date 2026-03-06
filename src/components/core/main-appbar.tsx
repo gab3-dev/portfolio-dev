@@ -51,6 +51,7 @@ function ResponsiveAppBar({ className }: ResponsiveAppBarProps) {
   const pages: Page[] = [
     { title: t('projects'), path: `/${locale}/projects` },
     { title: t('services'), path: `/${locale}/services` },
+    { title: t('contacts'), path: `/${locale}/contacts` },
     { title: t('blog'), path: `/${locale}/blog` },
   ];
 
