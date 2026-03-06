@@ -36,21 +36,17 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider messages={messages}>
-          <main
-            className={`${berkleyFont.className} flex flex-col gap-[32px] row-start-2 sm:items-start`}
-          >
-            <div className="pt-[10px] w-[90vw] mx-auto">
-              <MainAppBar className={berkleyFont.className} />
-            </div>
-            {children}
-          </main>
-          <footer className="flex flex-wrap row-start-3 justify-center items-center gap-[24px]" />
-          <LocaleToggle />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <main
+        className={`${berkleyFont.className} flex flex-col gap-[32px] row-start-2 sm:items-start`}
+      >
+        <div className="pt-[10px] w-[90vw] mx-auto">
+          <MainAppBar className={berkleyFont.className} />
+        </div>
+        {children}
+      </main>
+      <footer className="flex flex-wrap row-start-3 justify-center items-center gap-[24px]" />
+      <LocaleToggle />
+    </NextIntlClientProvider>
   );
 }
