@@ -6,12 +6,12 @@ import { ReactNode } from 'react'
 interface SectionProps {
     title: string
     description: string
-    backgroundColor: string
+    backgroundColor?: string
     color?: string
     children: ReactNode
 }
 
-export default function Section({ title, description, backgroundColor, color = '#000', children }: SectionProps) {
+export default function Section({ title, description, backgroundColor = 'none', color = '#000', children }: SectionProps) {
     return (
         <section style={{ backgroundColor, width: '90vw', borderRadius: '16px', margin: '30px auto', paddingBottom: '30px' }}>
             <Typography

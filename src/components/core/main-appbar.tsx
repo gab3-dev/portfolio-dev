@@ -14,6 +14,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { createTheme, alpha, ThemeProvider } from '@mui/material/styles';
 import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 type Page = {
   title: string;
@@ -48,6 +49,7 @@ function ResponsiveAppBar({ className }: ResponsiveAppBarProps) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const t = useTranslations('nav');
   const locale = useLocale();
+  const router = useRouter();
   const pages: Page[] = [
     { title: t('projects'), path: `/${locale}/projects` },
     { title: t('services'), path: `/${locale}/services` },
@@ -61,6 +63,11 @@ function ResponsiveAppBar({ className }: ResponsiveAppBarProps) {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleNavigate = (path: string) => {
+    handleCloseNavMenu();
+    router.push(path);
   };
 
   return (
@@ -143,10 +150,8 @@ function ResponsiveAppBar({ className }: ResponsiveAppBarProps) {
                 }}
               >
                 {pages.map((page: Page) => (
-                  <MenuItem className='bg-transparent' key={page.title}>
+                  <MenuItem className='bg-transparent' key={page.title} onClick={() => handleNavigate(page.path)}>
                     <Typography style={berkleyFont.style}
-                      href={page.path}
-                      component='a'
                       sx={{ textAlign: 'center' }}>
                       {page.title}
                     </Typography>
@@ -178,13 +183,11 @@ function ResponsiveAppBar({ className }: ResponsiveAppBarProps) {
                 <Button
                   style={berkleyFont.style}
                   key={page.title}
-                  onClick={handleCloseNavMenu}
+                  onClick={() => handleNavigate(page.path)}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   <Typography
                     style={berkleyFont.style}
-                    component="a"
-                    href={page.path}
                     className="underline-effect"
                     sx={{
                       fontWeight: 400,
