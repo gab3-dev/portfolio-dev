@@ -1,7 +1,6 @@
 'use client';
 
 import { Box } from '@mui/material';
-import { keyframes } from '@mui/system';
 import { useTranslations } from 'next-intl';
 import {
   ServiceCard,
