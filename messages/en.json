@@ -11,7 +11,7 @@
   },
   "home": {
     "greeting": "Hello, nice to see you here! My name is Gabriel Henrique.",
-    "stack": "I'm a FullStack developer working with Angular, React, Rust, Flutter, PostgreSQL and ASP.NET.",
+    "stack": "I'm a Full-Stack developer working with Angular, React, Rust, Flutter, PostgreSQL, and ASP.NET.",
     "pitch": "I build fast, responsive, modern and flexible applications, always focusing on performance, quality and great user experience."
   },
   "projects": {
