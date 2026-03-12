@@ -39,6 +39,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <main
         className={`${berkleyFont.className} flex flex-col gap-[32px] row-start-2 sm:items-start`}
+        style={{ overflowX: 'clip' }}
       >
         <div className="pt-[10px] w-[90vw] mx-auto">
           <MainAppBar className={berkleyFont.className} />
